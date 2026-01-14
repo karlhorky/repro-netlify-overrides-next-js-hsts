@@ -12,7 +12,7 @@ How this reproduction was created:
    cd repro-netlify-overrides-next-js-hsts
    pnpm create next-app . --app --no-src-dir --no-eslint --import-alias @/\* --no-tailwind --typescript --react-compiler
    ```
-2. Add [a `proxy.ts` file](./proxy.ts) in the project root which [sets a `Strict-Transport-Security` response header](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#setting-headers) including the `includeSubdomains` and `preload`
+2. Add [a `proxy.ts` file](./proxy.ts) in the project root which [sets a `Strict-Transport-Security` response header](https://nextjs.org/docs/app/api-reference/file-conventions/proxy#setting-headers) including the `includeSubdomains` and `preload` directives
 3. Run the build and start the server locally
 4. In browser DevTools, review the `Strict-Transport-Security` response header from `localhost:3000` and observe the presence of the `includeSubdomains` and `preload` directives
    ![DevTools showing HSTS header for localhost:3000](./.readme/hsts-header-localhost.avif)
