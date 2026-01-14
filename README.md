@@ -19,5 +19,5 @@ How this reproduction was created:
 5. Remove the `packages` config from `pnpm-workspace.yaml` (to avoid [Netlify build error when inferring build command as `pnpm --filter ... build`](https://github.com/vercel/next.js/pull/88546))
 6. Create a project on Netlify and deploy
 7. Add a domain, and configure it to be managed by Netlify DNS (leave the default config of `www` redirecting to apex domain)
-8. In browser DevTools, review the `Strict-Transport-Security` response header from the apex domain and observe the overridden header value, with a different `max-age` and missing `includeSubdomains` and `preload` directives 💥
+8. In browser DevTools, review the `Strict-Transport-Security` response header from the apex domain and observe the overridden header value, with a different `max-age` of `31536000` and missing `includeSubdomains` and `preload` directives 💥
    ![DevTools showing HSTS header for Netlify apex domain](./.readme/hsts-header-netlify-apex-domain.avif)
