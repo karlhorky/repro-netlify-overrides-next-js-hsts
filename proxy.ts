@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server.js';
+import { NextRequest, NextResponse } from 'next/server';
 
 export function proxy(request: NextRequest) {
   const response = NextResponse.next({
